@@ -1,0 +1,6 @@
+## [Project: Cinema Room Manager](https://hyperskill.org/projects/133)
+#### [Work on project. Stage 1/5: Arrangement!](https://hyperskill.org/projects/133/stages/709/implement)
+#### [Work on project. Stage 2/5: Sold!](https://hyperskill.org/projects/133/stages/710/implement)
+#### [Work on project. Stage 3/5: Tickets](https://hyperskill.org/projects/133/stages/711/implement)
+#### [Work on project. Stage 4/5: Menu, please!](https://hyperskill.org/projects/133/stages/712/implement)
+#### [Work on project. Stage 5/5: Errors!](https://hyperskill.org/projects/133/stages/713/implement)
