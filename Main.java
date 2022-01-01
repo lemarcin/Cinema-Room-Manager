@@ -5,19 +5,29 @@ import java.util.Scanner;
 public class Cinema {
 
     public static void main(String[] args) {
+
         char[][] seatingPlan = enterSeats();
-        print(seatingPlan);
-        enterSeat(seatingPlan);
-        print(seatingPlan);
+        int menu = 0;
+        do {
+            System.out.print("\n1. Show the seats\n2. Buy a ticket\n0. Exit\n> ");
+            Scanner scanner = new Scanner(System.in);
+            menu = scanner.nextInt();
+            switch (menu) {
+                case 1:
+                    print(seatingPlan);
+                    break;
+                case 2:
+                    buyTicket(seatingPlan);
+            }
+        }while (menu != 0);
+
     }
 
     public static char[][] enterSeats() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the number of rows:");
-        System.out.print("> ");
+        System.out.print("Enter the number of rows:\n> ");
         int rows = scanner.nextInt();
-        System.out.println("Enter the number of seats in each row:");
-        System.out.print("> ");
+        System.out.print("Enter the number of seats in each row:\n> ");
         int seats = scanner.nextInt();
         char[][] seatingPlan = new char[rows][seats];
         for (int i = 0; i < seatingPlan.length; i++) {
@@ -43,16 +53,14 @@ public class Cinema {
         }
     }
 
-    public static void enterSeat(char seatingPlan[][]) {
+    public static void buyTicket(char seatingPlan[][]) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nEnter a row number:");
-        System.out.print("> ");
+        System.out.print("\nEnter a row number:\n> ");
         int row = scanner.nextInt();
-        System.out.println("Enter a seat number in that row:");
-        System.out.print("> ");
+        System.out.print("Enter a seat number in that row:\n> ");
         int seat = scanner.nextInt();
         seatingPlan[row - 1][seat - 1] = 'B';
-        System.out.println("\nTicket price: $" + (seatingPlan.length * seatingPlan[0].length <= 60 ? "10" :
-                row <= seatingPlan.length / 2 ? "10" : "8"));
+        System.out.println("\nTicket price: $" +
+                (seatingPlan.length * seatingPlan[0].length <= 60 || row <= seatingPlan.length / 2 ? "10" : "8"));
     }
 }
